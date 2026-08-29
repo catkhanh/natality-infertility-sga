@@ -22,6 +22,27 @@ The project is being developed as an epidemiology portfolio exercise. It focuses
 
 The raw natality file is not uploaded to this repository because of its size and data-use considerations. It can be downloaded directly from the source above.
 
+## Current preliminary results
+
+The analysis used 3,757,582 raw 2019 records, yielding 3,294,277 eligible births. A reproducible random 10% sample contained 329,360 births.
+
+| Analysis | Adjusted risk ratio for infertility treatment and SGA | 95% confidence interval |
+| --- | ---: | ---: |
+| Single stochastic exposure imputation | 0.98 | 0.90 to 1.07 |
+| Complete-case sensitivity analysis | 0.98 | 0.90 to 1.07 |
+
+In this one-year, 10% sample, there was no clear evidence of an adjusted association between recorded infertility treatment and SGA. These estimates are preliminary and are not expected to exactly reproduce the published five-year MICE analysis.
+
+## Missing-data limitation
+
+The regression-output file does not yet record the number or percentage of births with missing infertility-treatment status. That percentage must be reported before interpreting the imputation analysis.
+
+The published study used multiple imputation by chained equations; this portfolio analysis currently uses one simpler stochastic imputation. That approach assumes the exposure is **missing at random (MAR)** after conditioning on SGA and the included covariates. MAR cannot be verified from observed data.
+
+A more concerning possibility is **missing not at random (MNAR)**: reporting of infertility treatment could depend on the unobserved true treatment status, pregnancy outcome, or factors not included in the model. For example, reporting may differ between pregnancies with and without SGA. If this occurs, both the imputed and complete-case estimates may be biased. This is an important limitation rather than a claim that MNAR definitely occurred.
+
+The next analysis step is to report exposure and covariate missingness by SGA status, then assess robustness with complete-case and plausible missingness sensitivity analyses.
+
 ## Planned analysis
 
 1. Build and document the eligible study population.
@@ -33,8 +54,4 @@ The raw natality file is not uploaded to this repository because of its size and
 
 ## Important interpretation note
 
-This is an observational birth-certificate analysis. Results describe an adjusted association, not a causal effect of infertility treatment. Residual confounding, exposure misclassification, and selection into live birth remain important limitations.
-
-## Status
-
-README established. Analysis code and results will be added after the data pipeline has been checked locally.
+This is an observational birth-certificate analysis. Results describe an adjusted association, not a causal effect of infertility treatment. Residual confounding, exposure misclassification, selection into live birth, and missing-data assumptions remain important limitations.
