@@ -33,15 +33,15 @@ The analysis used 3,757,582 raw 2019 records, yielding 3,294,277 eligible births
 
 In this one-year, 10% sample, there was no clear evidence of an adjusted association between recorded infertility treatment and SGA. These estimates are preliminary and are not expected to exactly reproduce the published five-year MICE analysis.
 
-## Missing-data limitation
+## Missing-data assessment and limitation
 
-The regression-output file does not yet record the number or percentage of births with missing infertility-treatment status. That percentage must be reported before interpreting the imputation analysis.
+Infertility-treatment status was missing for 1,025 of 329,360 births (**0.311%**). Missingness was similar by outcome: 913 of 295,784 non-SGA births (**0.309%**) and 112 of 33,576 SGA births (**0.334%**). The absolute difference is 0.025 percentage points.
 
-The published study used multiple imputation by chained equations; this portfolio analysis currently uses one simpler stochastic imputation. That approach assumes the exposure is **missing at random (MAR)** after conditioning on SGA and the included covariates. MAR cannot be verified from observed data.
+This observed similarity provides no sign of a strong association between exposure missingness and SGA. It does **not** prove that the exposure is missing at random (MAR), because MAR depends on the unobserved true treatment status and other unmeasured factors.
 
-A more concerning possibility is **missing not at random (MNAR)**: reporting of infertility treatment could depend on the unobserved true treatment status, pregnancy outcome, or factors not included in the model. For example, reporting may differ between pregnancies with and without SGA. If this occurs, both the imputed and complete-case estimates may be biased. This is an important limitation rather than a claim that MNAR definitely occurred.
+The published study used multiple imputation by chained equations; this portfolio analysis currently uses one simpler stochastic imputation. That approach assumes the exposure is MAR after conditioning on SGA and the included covariates. A more concerning possibility is **missing not at random (MNAR)**: reporting could depend on the unobserved true treatment status, pregnancy outcome, or factors not included in the model. If this occurs, both imputed and complete-case estimates may be biased. This is an important limitation, not a claim that MNAR definitely occurred.
 
-The next analysis step is to report exposure and covariate missingness by SGA status, then assess robustness with complete-case and plausible missingness sensitivity analyses.
+The next analysis step is to report covariate missingness by exposure and outcome, then assess robustness with complete-case and plausible missingness sensitivity analyses.
 
 ## Planned analysis
 
