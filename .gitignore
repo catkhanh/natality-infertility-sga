@@ -1,0 +1,16 @@
+# macOS and RStudio files
+.DS_Store
+.Rhistory
+.RData
+.Rproj.user/
+
+# Source data are downloaded locally and must never be committed.
+data/*
+!data/README.md
+
+# Analysis outputs can be regenerated from the script. The two CSV files below
+# are retained as the preliminary results reported in the project README.
+outputs/*
+!outputs/README.md
+!outputs/eligibility_flow_2019.csv
+!outputs/modified_poisson_robust_rr_2019.csv
