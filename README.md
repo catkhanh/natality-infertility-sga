@@ -39,9 +39,8 @@ Infertility-treatment status was missing for 1,025 of 329,360 births (**0.311%**
 
 This observed similarity provides no sign of a strong association between exposure missingness and SGA. It does **not** prove that the exposure is missing at random (MAR), because MAR depends on the unobserved true treatment status and other unmeasured factors.
 
-The published study used multiple imputation by chained equations; this portfolio analysis currently uses one simpler stochastic imputation. That approach assumes the exposure is MAR after conditioning on SGA and the included covariates. A more concerning possibility is **missing not at random (MNAR)**: reporting could depend on the unobserved true treatment status, pregnancy outcome, or factors not included in the model. If this occurs, both imputed and complete-case estimates may be biased. This is an important limitation, not a claim that MNAR definitely occurred.
+The published study used multiple imputation by chained equations; this portfolio analysis currently uses one simpler stochastic imputation. That approach assumes the exposure is MAR after conditioning on SGA and the included covariates. A more concerning possibility is **missing not at random (MNAR)**: reporting could depend on the unobserved true treatment status, pregnancy outcome, or factors not included in the model. If this occurs, both imputed and complete-case estimates may be biased.
 
-The next analysis step is to report covariate missingness by exposure and outcome, then assess robustness with complete-case and plausible missingness sensitivity analyses.
 
 ## Planned analysis
 
@@ -51,7 +50,3 @@ The next analysis step is to report covariate missingness by exposure and outcom
 4. Examine missing exposure and covariate data.
 5. Estimate crude and adjusted risk ratios using modified Poisson regression with robust standard errors.
 6. Compare a simple single-imputation analysis with a complete-case sensitivity analysis.
-
-## Important interpretation note
-
-This is an observational birth-certificate analysis. Results describe an adjusted association, not a causal effect of infertility treatment. Residual confounding, exposure misclassification, selection into live birth, and missing-data assumptions remain important limitations.
